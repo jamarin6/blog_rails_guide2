@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<% if current_user %>
+	you are sign_in with <%= current_user.email %><br>
+	<%= link_to "Exit", destroy_user_session_path, method: :delete %>
+<% else %>
+	NOT sign_in
+
+<% end %>
+
 <%= yield %>
 
 </body>
