@@ -3,17 +3,19 @@ class ArticlesController < ApplicationController
 	# http_basic_authenticate_with name: "dhh", password: "secret",
 	#  except: [:index, :show]
 	#  Este ejemplo de arriba es muy básico, solo vale para un unico name y password que
-	#  se pone aqui y ya está, por eso usamos Devise que es muuuuucho mas completo.
+	#  se pone aqui y ya está, por eso usamos Devise que es una gema muy completa.
+
+	before_action :authenticate_user!
 
 	def index
 		@articles = Article.all
+		@users = User.all
 	end
 
 	def show
 		@article = Article.find(params[:id])
 	end
 
-	before_action :authenticate_user!
 
 	def new
 		@article = Article.new

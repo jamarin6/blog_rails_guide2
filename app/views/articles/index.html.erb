@@ -1,7 +1,7 @@
 <h1>Listing articles</h1>
 
 <%= link_to 'New article', new_article_path %>
-<table>
+<table class='mytable'>
 	<tr>
 		<th>Title</th>
 		<th>Text</th>
@@ -18,4 +18,13 @@
 		</tr>
 	<% end %>
 
+</table>
+
+<h2>All the writers</h2>
+<table class='mytable2'>
+	<% @users.each do |user| %>
+		<tr>
+		<td><%= user.email %></td>
+		</tr>
+	<% end %>
 </table>
