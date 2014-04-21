@@ -13,9 +13,6 @@
  */
 
 .mytable {
-	background-color: aliceblue;
-}
-
-.mytable2 {
-	background-color: azure;
+	background-color: darkturquoise;
+	border-radius: 10px;
 }

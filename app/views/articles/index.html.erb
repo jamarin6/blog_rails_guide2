@@ -3,6 +3,8 @@
 <%= link_to 'New article', new_article_path %>
 <table class='mytable'>
 	<tr>
+		<th>Number</th>
+		<th>article.user_id</th>
 		<th>Title</th>
 		<th>Text</th>
 		<th colspan="2"></th>
@@ -10,6 +12,8 @@
 
 	<% @articles.each do |article| %>
 		<tr>
+			<td><%= article.id %></td>
+			<td><%= article.user_id %></td>
 			<td><%= article.title %></td>
 			<td><%= article.text %></td>
 			<td><%= link_to 'Show', article_path(article) %></td>
@@ -21,7 +25,7 @@
 </table>
 
 <h2>All the writers</h2>
-<table class='mytable2'>
+<table class='mytable'>
 	<% @users.each do |user| %>
 		<tr>
 		<td><%= user.email %></td>
