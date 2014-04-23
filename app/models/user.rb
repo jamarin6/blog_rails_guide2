@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles
+
+  def add_one_to_num_articles
+  	self.num_articles += 1
+  end
+  
 end

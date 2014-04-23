@@ -26,7 +26,6 @@ class ArticlesController < ApplicationController
 		@article.user = current_user 
  
        if @article.save
-       	#  @article.user.num_articles = @article.user.num_articles + 1
           redirect_to @article
       else
       	render 'new'
