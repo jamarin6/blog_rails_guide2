@@ -6,8 +6,4 @@ class User < ActiveRecord::Base
 
   has_many :articles, dependent: :destroy
 
-  def add_one_to_num_articles
-  	self.num_articles += 1
-  end
-  
 end
