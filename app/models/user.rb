@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :articles
+  has_many :articles, dependent: :destroy
 
   def add_one_to_num_articles
   	self.num_articles += 1

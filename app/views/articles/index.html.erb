@@ -27,13 +27,18 @@
 <h2>All the writers</h2>
 <table class='mytable'>
   <tr>
-  	  <th>writer</th>
-  	  <th>nºarticles</th>
+  	  <th> -writer-</th>
+  	  <th> -nºarticles in list- </th>
+  	  <th> -total nºarticles-</th>
+  	  <th> -nºcomments in list-</th>
+  	  <th> -total nºcomments</th>
   </tr>
 	<% @users.each do |user| %>
 		<tr>
 		<td><%= user.email %></td>
 		<td><%= user.articles.count %></td>
+		<td><%= user.num_articles %></td>
+		<td><%#= user.articles.user.comments.count %></td>
 		</tr>
 	<% end %>
 </table>

@@ -24,8 +24,10 @@ class ArticlesController < ApplicationController
 	def create
 		@article = Article.new(article_params)
 		@article.user = current_user 
+
  
        if @article.save
+       	  @article.user.update_attributes(:num_articles => @article.user.num_articles + 1)
           redirect_to @article
       else
       	render 'new'
